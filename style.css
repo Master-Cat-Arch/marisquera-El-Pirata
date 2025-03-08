@@ -9,7 +9,7 @@ body{
     --ColorFondoOscuro: rgb(192, 192, 192);
     --ColorLetra: aliceblue;
     background-color: var(--ColorFondoClaro);
-    height: 600vh;
+    /* height: 600vh; */
 }
 
 .header-encabezado{
@@ -79,7 +79,10 @@ body{
             border-radius: 50%;
             border: 1px solid rgb(247, 151, 151);
         }
-        .chef-leo{font-weight: 600;}
+        #chef-leo{
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
         h2,p{
             text-shadow: 0 0 9px black;
             color: var(--ColorLetra);
@@ -141,7 +144,7 @@ main{
             max-width: 100%;
             width: 700px;
             border-radius: 10px;
-            border: 2px solid black;
+            /* border: 2px solid black; */
         }
         p{
             max-width: 100%;
@@ -155,7 +158,46 @@ main{
     
 
 
-.PIE-DE-PÁGINA{
-    background-color: red;
+.footer-pie_de_pagina{
+    background-color: rgb(226, 117, 74);
     color: var(--ColorLetra);
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    padding: 30px;
+    gap: 5px;
+    .footer-pie1{
+        div{
+            display: flex;
+            flex-direction: row;
+            /*border: 1px solid black;*/
+            height: 170px;
+            .logo_footer{
+                border-radius: 10px;
+                height: 150px;
+                /*border: 1px solid black;*/
+            }
+            p{
+                /*border: 1px solid black;*/
+                padding: 10px;
+                height: 150px;
+                text-align: center;
+            }
+        }
+        h4{
+            font-size: 1.2rem;
+        }
+        li{
+            margin-left: 20px;
+        }
+    }
+        
+    /*.footer-pie2{
+
+    }*/
+    .footer-pie1, .footer-pie2{
+        border: 1px solid black;
+        
+        width: 45%;
+    }
 }

@@ -8,18 +8,33 @@
     <link rel="icon" href="Img/logo.jpg"> <!--icóno-->
 </head>
 <body>
-    <header class="header-encabezado">
-        <img class="img-logo" src="Img/logo_.png" alt="Logo de el Pirata">
-        <nav class="nav-lista">
-            <ul>
-                <li class="li-item"><a href="#">Menu </a></li>
-                <li class="li-item"><a href="#">Contacto </a></li>
-                <li class="li-item"><a href="#">Reservaciones </a></li>
-                <li class="li-item"><a href="#">Categoria </a></li>
-                <li class="li-item"><a href="#">Pedidos </a></li>
-            </ul>
-        </nav>
+    <header id="header" class="header__menu">
+        <div class="header__container-menu">
+            <input type="checkbox" id="open-menu">
+            <label for="open-menu" class="menu-open--nav" role="button">≡</label>
+            <nav class="nav-menu" id="nav-menu">
+                <div class="menu__container-logo2" id="menu__container-logo1">
+                    <img class="menu__img-logo2" src="Img/logo.jpg" type="jpg">
+                    <div class="logo2-text">
+                        <label>Ceviche el Pirata</label>
+                        <a href="#">__Leonardo-Chef__</a>
+                    </div>
+                </div>
+                <hr>
+                <ul class="menu__nav-list">
+                    <li class="nav__li-item"><a href="#">Menu </a></li>
+                    <li class="nav__li-item"><a href="#">Contacto </a></li>
+                    <li class="nav__li-item"><a href="#">Reservaciones </a></li>
+                    <li class="nav__li-item"><a href="#">Categoria </a></li>
+                    <li class="nav__li-item"><a href="#">Pedidos </a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header__container-logo1">
+            <img class="img-logo1" src="Img/logo_.png" type="png" alt="Logo de el Pirata">
+        </div>
     </header>
+
     
     <section class="sec-especialidad">
         <img class="img-especialidad" src="Img/img-principal.jpg" alt="imágen del platillo principal" title="">
@@ -29,7 +44,7 @@
             <p><b>Mariscos el pirata les da la oportunidad de traer desde el mar asta tu paladar.</b> 
                 Les ofrecemos una muy grande variedad de productos marinos y terrestres como milanesas de pollo, hamburguesas, etc. </p>
             <div class="inf-leo">
-                <img class="img-leo" style="width: 70px; height: 70px;" src="Img/Leo.jpg" alt="imagen del chef" title="hay mi leonardito">
+                <img class="img-leo" id="img-leo" src="Img/Leo.jpg" alt="imagen del chef" title="hay mi leonardito">
                 <div>
                     <p id="chef-leo">Leonardo Alvarez Vega.</p>
                     <p>Empleado del mes.</p>
@@ -51,14 +66,14 @@
         </div>
     </section>
 
-    <main> <!--LLENA LA DESCRIPCIÓN DEL RESTAURANTE, INGREDIENTES Y DEMÁS QUE SE TE OCURRA-->
+    <main class="main__principal"> <!--LLENA LA DESCRIPCIÓN DEL RESTAURANTE, INGREDIENTES Y DEMÁS QUE SE TE OCURRA-->
         <section class="sec-descripcion">
             <h1>MARISCOS EL PIRATA: viene de toda una familia de marisqueros y sazones</h1> 
             <p>Todo empezó por un local muy pequeño (Hera un triciclo) el cual a sus principios no tenía muchas ventas, pero con el paso de los días y de los años es lo que hoy conocemos como MARISCOS EL PIRATA el cual día con día se esfuerza y se concentra para satisfacer su paladar para que prueben el sazón de <b>MARISCOS EL PIRATA</b> que viene de generación en generación.</p>
             <p>Todos nuestros productos son de muy buena calidad para brindarles a ustedes una mayor experiencia inolvidable </p>
             <p>Nuestra familia de marisquero es muy conocida en todo Guanajuato tenemos varios locales como en Celaya que fue donde empezó toda la historia. mariscos playa azul, Mariscos Peter’s esos provienen de la familia </p>
         </section>
-        <div>
+        <div class="main__container-img-ceviche">
             <img class="img-ceviche" src="Img/img_ceviche1.png" alt="Ceviche-1">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae pariatur sapiente assumenda dignissimos. Perspiciatis, iusto corporis assumenda, fuga nesciunt deleniti doloribus odit officiis aut, nam tenetur! Temporibus unde omnis voluptatibus.</p>
         </div>
@@ -83,7 +98,7 @@
         <!--IMAGINA UN PIE DE PÁGINA-->
         <!--<marquee>VISITANOS :D</marquee>-->
         <div class="footer-pie1">
-            <div>
+            <div class="footer__container-img">
                 <img class="logo_footer" src="Img/logo.jpg" alt="Logo de el local de ceviche">
                 <p>Plataforma de marketing, menus y distribucion de informacion sobre el local de "Ceviche el Pirata"</p>
             </div>

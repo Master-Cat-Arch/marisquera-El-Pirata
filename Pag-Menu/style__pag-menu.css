@@ -1,7 +1,10 @@
 :root{
     --ColorFondoClaro: rgb(243, 243, 243);
+    --ColorFondoClaro2: rgb(224, 235, 219);
     --ColorFondoOscuro: rgb(221, 221, 221);
+    --ColorFondoOscuro2: rgb(173, 173, 173);
     --ColorLetra: aliceblue;
+    --ColorLetra2: rgb(233, 62, 19);
 }
 *{
     box-sizing: border-box;
@@ -23,7 +26,7 @@ body{
     justify-content: space-between;
     background-color: var(--ColorFondoOscuro);
     box-shadow: 0 0 5px black;
-    height: 45px;
+    height: 50px;
     align-items: center;
     z-index: 1;
     margin-bottom: 3px;
@@ -45,7 +48,7 @@ body{
             padding: 5px 15px;
         }
         .menu-open--nav:hover{
-            background-color: var(--ColorFondoOscuro);
+            background-color: var(--ColorFondoOscuro2);
         }
         .menu-open--nav:active{
             background-color: var(--ColorFondoClaro);
@@ -54,7 +57,7 @@ body{
             display: none;
             flex-direction: column;
             position: fixed;
-            background-color: #e0ebdb;
+            background-color: var(--ColorFondoClaro2);
             box-shadow: 0 0 5px black;
             height: 100vh;
             width: 100%;
@@ -117,6 +120,7 @@ body{
                 .nav__li-item :is(:hover,:active){
                     text-decoration: underline;
                     font-style: italic;
+                    transition: .3s;
                     border: 1px solid var(--ColorLetra);
                     background-color: var(--ColorFondoOscuro);
                 }
@@ -173,14 +177,14 @@ body{
                         padding: 30px 0;
                     }
                     a{
-                        transition: .5s;
+                        transition: .3s;
                         font-size: 1.3rem;
                         font-weight: 600;
                         padding: 10px 20px;
                     }
                     a:hover{
-                        background-color: rgb(194, 194, 194);
-                        color: rgb(255, 69, 22);
+                        background-color: var(--ColorFondoOscuro);
+                        color: var(--ColorLetra2);
                         border: 1px solid;
                         border-radius: 20px;
                     }
@@ -194,5 +198,127 @@ body{
                 height: 140px;
             }
         }
+    }
+}
+
+/*//////// Aside Barra ////////*/
+.aside-bar{
+    border-radius: 8px;
+    height: auto;
+    .nav-menu-recetas{
+        margin: 2px;
+        .details-1{
+            background-color: #f0d5b2;
+            summary{
+                background-color: #eec998;
+                border: 1px solid black;
+                border-radius: 8px;
+                margin: 5px 10px;
+                padding: 0 0 2px 10px;
+            }
+            .menu-recetas{
+                list-style: none;
+                margin: 5px 10px;
+                ul{
+                    background-color: #e0b47a;
+                    border: 1px solid black;
+                    margin: -5px 10px 10px;
+                    padding: 5px 30px;
+                    border-top: 0;
+                    border-end-start-radius: 8px;
+                    border-end-end-radius: 8px;
+                    animation: aparecer .6s both;
+                }
+                details[open] > summary{
+                    background-color: #e0b47a;
+                    transition: .6s;
+                    border-radius: 8px 8px 0 0;
+                }
+                
+            }
+            a{
+                color: black;
+                transition: .3s;
+                text-decoration: none;
+                font-size: .8rem;
+            }
+            a:hover{
+                color: var(--ColorLetra2);
+                text-decoration: underline;
+                font-style: italic;
+            }
+        }
+        .details-1[open]{
+            transition: 1.2s;
+        }
+        .details-1[open] > .menu-recetas{animation: aparecer 1s both;}
+    }
+    details{overflow: hidden;}
+}
+
+/*//////// Container Aside Barra ////////*/
+@container Body (min-width: 700px){
+    #aside-bar{
+        position: absolute;
+        height: auto;
+        top: 230px;
+        width: 25vw;
+        height: 70%;
+        margin-left: 12px;
+        border: 1px solid black;
+        .nav-menu-recetas{
+            position: sticky;
+            top: 200px;
+            margin: 0;
+            border-radius: 8px;
+            .details-1{
+                background-color: #f0d5b2;
+                padding: 5px 0;
+                summary{
+                    border-radius: 6px;
+                    a{
+                        font-size: .9rem;
+                    }
+                }
+                .menu-recetas{
+                    details[open] > summary{
+                        border-radius: 8px 8px 0 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.title{
+    margin: 10px;
+    font-size: 1.7rem;
+    text-align: center;
+}
+@container Body (min-width: 700px){
+    .title{
+        margin: 25px 25px;
+        font-size: 2rem;
+        text-align: left;
+    }
+}
+
+
+/*//////// Main Info Principal ////////*/
+main{
+    height: 200vh;
+}
+
+/*//////// Container Main Info Principal ////////*/
+@container Body (min-width: 700px){
+
+}
+
+@keyframes aparecer {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
     }
 }

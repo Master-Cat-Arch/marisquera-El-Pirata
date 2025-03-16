@@ -1,7 +1,7 @@
 :root{
     --ColorFondoClaro: rgb(243, 243, 243);
     --ColorFondoClaro2: rgb(224, 235, 219);
-    --ColorFondoOscuro: rgb(221, 221, 221);
+    --ColorFondoOscuro: rgba(221, 221, 221, 0.719);
     --ColorFondoOscuro2: rgb(173, 173, 173);
     --ColorLetra: aliceblue;
     --ColorLetra2: rgb(233, 62, 19);
@@ -25,11 +25,15 @@ body{
     flex-direction: row;
     justify-content: space-between;
     background-color: var(--ColorFondoOscuro);
+    backdrop-filter: blur(5px); /* Difumina el fondo */
     box-shadow: 0 0 5px black;
     height: 50px;
     align-items: center;
     z-index: 1;
     margin-bottom: 3px;
+    position: sticky; /* Mantiene el header fijo en la parte superior */
+    top: 0; /* Posición en la parte superior */
+}
     .header__container-menu{
         #open-menu{
             display: none;
@@ -123,7 +127,6 @@ body{
                     transition: .3s;
                     border: 1px solid var(--ColorLetra);
                     background-color: var(--ColorFondoOscuro);
-                }
             }
         }
     }
@@ -203,29 +206,50 @@ body{
 
 
 /*//////// Especialidad Leo ////////*/
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+.coleccion-img {
+    display: flex;
+    width: 200%; /* El doble del ancho para permitir el desplazamiento continuo */
+    animation: slide 15s infinite linear;
+}
+.coleccion-img img {
+    width: 50%; /* Cada imagen ocupa la mitad del ancho del carrusel */
+    object-fit: cover;
+    height: 70vh;
+}
 .sec-especialidad{
+    position: relative;
     height: 70vh;
     overflow: hidden;
     display: flex;
+    align-items: center;
     .img-especialidad{
         min-width: 100vw;
         object-fit: cover;
         height: 70vh;
+        animation: slide 5s infinite; /*Desplazamiento de la imágen*/
     }
     .info-enpleado{
-        position: absolute;
-        background-color: #b9a7a72c;
+        position:absolute;
+        background-color: #b9a7a73d;
         backdrop-filter: blur(3px);
-        top: 45vh;
+        top: 50vh;
+        transform: translateY(-50%); /* Centra verticalmente la sección */
+        margin-bottom: 20px;
         left: 2rem;
         border-radius: 10px;
         width: 250px;
         padding: 20px;
+        z-index: 1;
         .inf-leo{
             display: flex;
             flex-direction: row;
             align-items: center;
             margin-top: 20px;
+            margin-bottom: 20px;
             div{margin-left: 30px;}
             .img-leo{
                 border: 1px solid rgb(247, 151, 151);
@@ -237,12 +261,18 @@ body{
                 font-size: .7rem;
             }
         }
-        h2,p{
+        .info-enpleado h2, .info-enpleado p {
             text-shadow: 0 0 9px black;
             color: var(--ColorLetra);
         }
-        h2{font-size: .8rem;}
-        p{font-size: .5rem;}
+        
+        .info-enpleado h2 {
+            font-size: .8rem;
+        }
+        
+        .info-enpleado p {
+            font-size: .5rem;
+        }
     }
 }
 
@@ -258,7 +288,7 @@ body{
             }
             #chef-leo{font-size: 1.5rem;}
             h2{font-size: 1.7rem;}
-            p{font-size: 1.2rem;}
+            p{font-size: 1.4rem;}
         }
     }
 }
@@ -273,7 +303,8 @@ body{
     z-index: 1;
     .inf-video{
         width: 100%;
-        background-color: #ebb291;
+        background-color: #e79769d0;
+        backdrop-filter: blur(5px); /* Difumina el fondo */
         padding: 20px;
         .video-leo{
             width: auto;

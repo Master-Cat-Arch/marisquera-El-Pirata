@@ -37,10 +37,14 @@
 
     
     <section class="sec-especialidad">
-        <img class="img-especialidad" src="Img/img-principal.jpg" alt="imágen del platillo principal" title="">
-
+        <div class="coleccion-img">
+            <img class="img-especialidad" src="Img/img-principal.jpg" alt="imágen del platillo principal" title="">
+            <img class="img-especialidad" src="Img/img_ceviche4.jpg" alt="imágen del platillo secundario" title="">
+            <img class="img-especialidad" src="Img/img_ceviche5.jpg" alt="imágen del platillo secundario" title="">
+            <img class="img-especialidad" src="Img/img_ceviche6.jpg" alt="imágen del platillo secundario" title="">
+        </div>
         <div class="info-enpleado">
-            <h2>TOSTADAS DE CAMARÓN</h2>
+            <h2>DELICIAS DE LA CASA.</h2><BR>
             <p><b>Mariscos el pirata les da la oportunidad de traer desde el mar asta tu paladar.</b> 
                 Les ofrecemos una muy grande variedad de productos marinos y terrestres como milanesas de pollo, hamburguesas, etc. </p>
             <div class="inf-leo">
@@ -114,6 +118,21 @@
 
         </div>
     </footer>
-    
+
+    <!--cambiar imágen-especialidad-->
+    <script>
+        const images = [
+            'Img/img_ceviche3.png' // Añade más rutas de imágenes aquí
+        ];
+
+        let currentIndex = 0;
+        const imgElement = document.querySelector('.img-especialidad');
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            imgElement.src = images[currentIndex];
+        }, 10000); // Cambia cada 5 segundos
+    </script>
+
 </body>
 </html>

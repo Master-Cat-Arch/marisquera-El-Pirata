@@ -100,7 +100,7 @@
         <!--AGREGA UN MAPA DE UBICACIÓN-->
     </section>
     
-    <footer class="footer-pie_de_pagina">
+    <footer class="footer-pie_de_pagina">dfs
         <div class="footer-pie1">
             <h6>Ceviche el Pirata</h6>
             <hr>
@@ -129,5 +129,14 @@
         </div>
     </footer>
     
+    <?php
+    $enlace - msqli_connect("localhost","root","superadministrador","enpresa");
+    if(!$enlace){
+        die(" no puedo conectarme a la base de datos :c")
+    }
+    echo "conexión exitosa";
+    mysqli_close($enlace);
+    ?>
+
 </body>
 </html>

@@ -1,3 +1,43 @@
+// Función para cargar los platillos desde la base de datos
+async function cargarPlatillos() {
+    try {
+        const response = await fetch('obtener_platillos.php');
+        const platillos = await response.json();
+        
+        const contenedor = document.getElementById('container-productos');
+        contenedor.innerHTML = ''; // Limpiar el contenedor
+
+        platillos.forEach(platillo => {
+            const estrellas = '★'.repeat(platillo.Estrellas) + '☆'.repeat(5 - platillo.Estrellas);
+            
+            const platilloHTML = `
+                <div class="cont-prod">
+                    <div class="cont-img">
+                        <a href="#"><img src="${platillo.Img}"></a>
+                    </div>
+                    <div class="info-prod">
+                        <h6>${platillo.Nombre}</h6>
+                        <hr>
+                        <div class="pre-estr">
+                            <label class="prod-precio"><b>Precio: $${platillo.Precio}</b></label>
+                            <p class="prod-estrellas">'⭐'${estrellas}</p>
+                            <label class="prod-tamano"><b>${platillo.Tamano}</b></label>
+                        </div>
+                    </div>
+                </div>
+            `;
+            contenedor.innerHTML += platilloHTML;
+        });
+    } catch (error) {
+        console.error('Error al cargar los platillos:', error);
+    }
+}
+
+// Cargar los platillos cuando se cargue la página
+document.addEventListener('DOMContentLoaded', cargarPlatillos);
+
+// #########################################################################################
+
 const MostProd = document.getElementById("container-productos");
 const Details1 = document.getElementById("details-1");
 
@@ -9,7 +49,7 @@ DtMenu.forEach(Prodt  =>{
 
 
 
-function MostrarMenu(Prodt2){
+/*function MostrarMenu(Prodt2){
     const CreaDiv = document.createElement("div");
     CreaDiv.classList.add("cont-prod");
     CreaDiv.innerHTML=`
@@ -26,7 +66,9 @@ function MostrarMenu(Prodt2){
             </div>
         </div>`;
    MostProd.appendChild(CreaDiv);
-}
+}*/
+
+
 function Todo(){
     MostProd.innerHTML=""
     DtMenu.forEach(Prodt =>{

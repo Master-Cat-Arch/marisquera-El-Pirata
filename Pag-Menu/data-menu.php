@@ -1,3 +1,32 @@
+
+
+
+<?php
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+
+$servername = "localhost";
+$username = "tu_usuario";
+//$password = "tu_contraseña";
+$dbname = "DatosPlatillos";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username);//, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    $stmt = $conn->prepare("SELECT * FROM DatosPlatillos");
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    echo json_encode($result);
+} catch(PDOException $e) {
+    echo json_encode(["error :v" => $e->getMessage()]);
+}
+
+$conn = null;
+?>
+
+<!--
 const DtMenu = [
     //// Tostadas ////
     {
@@ -233,4 +262,4 @@ const DtMenu = [
         percio:90,
         tamano:"350ml"
     },
-];
+];-->

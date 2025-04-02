@@ -6,7 +6,6 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 // Conexión a la base de datos
 $conexion = new mysqli('localhost', 'root', '', 'DatosPlatillos');
-
 if ($conexion->connect_error) {
     echo json_encode(['error' => 'Error de conexión a la base de datos']);
     exit;

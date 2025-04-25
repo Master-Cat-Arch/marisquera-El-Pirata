@@ -1,0 +1,118 @@
+Carpetas:
+  1. Principal:
+  	Se agrego un nuevo archivo js (script.js).
+  	HTML:
+  	∙ Se sincronizo el archivo js.
+  	∙ Se movió la función de cerrar el menú en modo de teléfono hacia el archivo js (function CerrarInp()...).
+  	∙ Se agrego un id a la imagen principal (id="img-especialidad").
+  	∙ Se agrego (oncontextmenu="CambioImg();return false") a la imagen principal para el cambio de imagen al hacer clic derecho.
+  	  - ((Easte egg)).
+  	∙ ///Documentado///.
+  	JS:
+  	∙ Se agrego la función de cerrar menú (function CerrarInp()...).
+  	∙ Se agrego la función de cambiar la imagen principal y cambiar el fondo del body al hacer clic derecho (function CambioImg()...).
+  	  - ((Easte egg)).
+  	∙ ///Documentado///.
+  	CSS: 
+  	∙ Sin cambios.
+  	∙ Sin documentación (Me dio hueva).
+
+  2. Pag-Menu:
+  	A este te dejo que le pongas un Easte egg. Se me ocurrió que al hacer cierta acción todas la imágenes de los menús se pongan la de Shrek Mamado.
+  	No le quise mover a mucho porque luego se enoja.
+
+
+
+
+  	HTML:
+  	∙ Se agregaron tres nuevas recetas Carpa, Ostiones, Ceviche(es lo principal y no estaba).
+  	  - Ostiones y Carpa se agregaron en "Otros Platillos".
+  	  - Ceviche agrego un nuevo details al principio.
+  	∙ ///Documentado///.
+
+
+  	JS:
+  	∙ JS1:
+  	  - Se agrego la función (function Cevi(){OctionSummary("Ceviche");}) para el nuevo parámetro de ceviche.
+  	  - A este voy a dejar que tu mismo lo documentes porque no se que tanta mondada le hiciste a mi pobre código.
+  	∙ JS2 (data.js):
+  	  - Se agregaron tres elementos para la base de datos. Ahí te encargo Osvielito, son los primeros tres.
+
+  	CSS: A este igual, medio hueva documentarlo.
+
+
+
+  3. Pag-Contacto:
+  	HTML:
+  	∙ Se movió la función de cerrar el menú en modo de teléfono hacia el archivo js (function CerrarInp()...).
+  	∙ Se cambio en tipo de el botón del formulario a tipo de button (antes era submit). Y se le agrego dato en value (<input type="button" id="submit" value="Enviar Consulta"...>).
+  	∙ ///Documentado///.
+  	JS:
+  	∙ Se agrego la función de cerrar menú (function CerrarInp()...).
+  	∙ Se agrego un "if" para la comprobación de que el gmail y el mensajes estén vacíos y comprobar los nombres clave para el cambio de imagen de fondo (if(Gmail=="" && Mensaj==""){ switch(Nombre){...). Valores "migue", "osvi" y "leo".
+  	  - ((Easte egg)).
+  	∙ ///Documentado///.
+  	CSS: Se cambio el tipo de valor en la linea 228 y 315.
+  	∙ Y también no quise documentarlo.
+
+  4. Pag-Reservaciones:
+  	HTML:
+  	∙ Se movió la función de cerrar el menú en modo de teléfono hacia el archivo js (function CerrarInp()...). Igual que los otros.}
+  	∙ Se agrego un "id" al contenedor del formulario (<div class="reservacion" id="reservacion">).
+  	∙ ///Documentado///.
+  	JS:
+  	∙ Se agrego la función de cerrar menú (function CerrarInp()...).
+  	∙ Se cambio el estilo de verificar los valores para guardarlos en las variables colocándole un "switch" (switch(Nombre){case "inp_name":...) en lugar de solo if anudados (if(Nombre == "inp_name")...)
+  	∙ Es igual que el anterior pero aquí lo vuelvo a escribir.
+  	∙ Se agrego un "if" para la comprobación de que solo los dos números de teléfonos estén vacíos y comprobar los nombres clave para el cambio de imagen de fondo y del contenedor del formulario (if(DatosReser.Number=="" && DatosReser.Number2==""){ switch(DatosReser.Name){...). Valores "migue", "osvi" y "leo".
+  	  - ((Easte egg)).
+  	∙ ///Documentado///.
+  	CSS: No hace falta que escriba aquí para decir que no le hice nada.
+
+  5. Pag-Categoria:
+  	Se agrego un nuevo archivo js (script__pag-categoria.js).
+  	HTML:
+  	∙ Se sincronizo el archivo js.
+  	∙ Se movió la función de cerrar el menú en modo de teléfono hacia el archivo js (function CerrarInp()...). Igual que a los otros.
+  	∙ Se elimino la segunda imagen oculta del Shrek mamado.
+  	∙ Se elimino las funciones del cambio de imagen de leo por su contra parte el Shrek mamado y se cambiara por otro método para el Easte egg.
+  	∙ Se agrego un "id" al contenedor de categorian (<div class="container-categoria" id="categoria">).
+  	∙ Se agrego (oncontextmenu="CambioImg();return false") a la imagen de leo para que al hacer clic derecho cambie el fondo del contenedor de categoria.
+  	  - ((Easte egg)).
+  	∙ ///Documentado///.
+  	JS:
+  	∙ Se agrego la función de cerrar menú (function CerrarInp()...).
+  	∙ Se agrego la función de cambiar el fondo del contenedor de categoria al hacer clic derecho (function CambioImg()...).
+  	  - ((Easte egg)).
+  	∙ ///Documentado///.
+  	CSS: Ya me aburrí de escribir y decirte que no le hice nada a este también.
+
+  6. Pag-Acerca-de:
+  	En este es mas de lo mismo, algunos cambios son similares a los anteriores pero lo volveré a escribir nomas (aunque en realidad lo copio y pego).
+  	Se agrego un nuevo archivo js (script__pag-acerca-de.js).
+  	HTML:
+  	∙ Se sincronizo el archivo js.
+  	∙ Se movió la función de cerrar el menú en modo de teléfono hacia el archivo js (function CerrarInp()...). Igual que a los otros.
+  	∙ A la imagen de leo se agrego (oncontextmenu="CambioImgLeo()) para cambiar de imagen al hacer clic derecho y se le agrego un "id" (id="Leo").}
+  	∙ A la imagen de osviel se agrego (oncontextmenu="CambioImgOsvi()) para cambiar de imagen al hacer clic derecho y se le agrego un "id" (id="Osvi").
+  	∙ A la imagen de migue se agrego (oncontextmenu="CambioImgMig()) para cambiar de imagen al hacer clic derecho y se le agrego un "id" (id="Migue").
+  	  - ((Easte egg)).
+  	∙ ///Documentado///.
+  	JS:
+  	∙ Se agrego la función de cerrar menú (function CerrarInp()...).
+  	∙ Se agregaron tres funciones para cambiar la imagen de Leo, Osvi y Migue cuando se precione clic derecho.
+  	  - ((Easte egg)).
+  	∙ Se agrego un evento que comprueva que teclas se precionaron y hacer un cambio de imagen. Estas son las teclas que se deven de precionasr solamente "l", "o", "m". 
+  	  - ((Easte egg)).
+  	∙ ///Documentado///.
+  	CSS:
+  	∙ ///Documentado///.
+  	∙ Naaaa era broma no le hice ni madr*s
+  7. Img: 
+  	∙ Se agregaron imágenes
+  	  1. img-Migue2.png
+  	  2. img-Osvi2.png
+  	  3. Shrek-Rock.png
+  	  4. img_ceviche.jpg
+  	  5. img_ostiones.png
+  	  6. img_carpa.jpg

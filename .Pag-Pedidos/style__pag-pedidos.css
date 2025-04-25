@@ -1,0 +1,13 @@
+:root{
+    --ColorLetra: aliceblue;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    container-type: inline-size;
+    container-name: Body;
+    background-color: aliceblue;
+}

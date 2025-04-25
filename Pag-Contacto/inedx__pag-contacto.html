@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="style__pag-contacto.css">
+    <link rel="icon" href="../Img/icono.jpg">
+    <script src="script__pag-contacto.js"></script>
+</head>
+<body>
+    <!-- Menu en la barra superior (en modo de computadoras) o en toda la pantalla (en modo de telefono) -->
+    <header id="header" class="header__menu">
+        <div class="header__container-menu">
+            <!-- Contenedor de objetos para modo de telefono -->
+            <input type="checkbox" id="open-menu"><!-- Indicado de estado del menu y mantenerlo abierto o cerrado -->
+            <label for="open-menu" class="menu-open--nav" role="button">≡</label><!-- Activador o desactivador del checkbox -->
+            <nav class="nav-menu" id="nav-menu">
+                <div class="menu__container-logo2" id="menu__container-logo1">
+                    <a href="../index.html" onclick="CerrarInp()"><img class="menu__img-logo2" src="../Img/logo.jpg" type="jpg"></a><!-- Imagen de el Logo para modo de telefono-->
+                    <div class="logo2-text">
+                        <!-- Titulo y nombre o seccion de la pagina -->
+                        <label>Ceviche el Pirata</label><!-- Titulo del Menu -->
+                        <a href="#">_((CONTACTO))_</a><!-- Nombre Pagina -->
+                    </div>
+                </div>
+                <hr>
+                <ul class="menu__nav-list">
+                    <!-- Menu de occiones -->
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="../Pag-Menu/index__pag-menu.html">Menu </a></li>
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="inedx__pag-contacto.html">Contacto </a></li>
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="../Pag-Reservaciones/inedx__pag-reservaciones.html">Reservaciones </a></li>
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="../Pag-Categoria/inedx__pag-categoria.html">Categoria </a></li>
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="../Pag-Acerca-de/inedx__pag-acerca-de.html">Acerca de</a></li>
+                    <!-- onclick="CerrarInp()": Sirve para cerrar el menu al hacer click en cada una de las occiones -->
+                </ul>
+            </nav>
+        </div>
+        <div class="header__container-logo1">
+            <!-- Contenedor de el logo -->
+            <a href="../index.html" onclick="CerrarInp()"><img class="img-logo1" src="../Img/logo_.png" type="png" alt="Logo de el Pirata" title="Logo de el Pirata"></a><!-- Imagen 2 para modo de computadora -->
+        </div>
+    </header>
+    
+    <!-- Seccion del contenedor del formulario y del contenedor de redes sociales -->
+    <main class="main-form">
+        <div class="container-form">
+            <!-- Contenedor de formulario de contacto -->
+            <form>
+                <h4>FORMULARIO DE CONTACTO</h4><!-- Titulo de formulario -->
+                <input type="text" name="input-name" id="input_name" placeholder="Enter your Name"><!-- Nombre -->
+                <input type="email" name="input-gmail" id="input_gmail" placeholder="Enter a valid email address"><!-- Correo -->
+                <textarea name="input-message" id="input_message" placeholder="Enter your message" style="resize: none;"></textarea><!-- Mensaje a redactar -->
+                <!-- <input type="submit" id="submit" onclick="Mensaje()"> --> <!-- Antes -->
+                <input type="button" id="submit" value="Enviar Consulta" onclick="Mensaje()"><!-- Despues -->
+            </form>
+        </div>
+        <div class="container-redes">
+            <!-- Contenedor de redes sociales -->
+            <h4>Ubicacion:</h4><!-- Titulo -->
+            <p>C. Jose María Morelos 559, El Llanito, 38800 Uriangato, Gto.</p><!-- Direccion del local -->
+            <hr>
+            <h4>Siguenos:</h4><!-- Titulo 2 -->
+            <ul>
+                <!-- Contenedor de las redes -->
+                 <!-- Y las imagenes en espera para el cambio de imagenes -->
+                <li>
+                    <a href="#"><div class="red-Inst" id="Inst"></div></a><!-- Link -->
+                    <label for="Inst">Instagarm</label><!-- Nombre -->
+                </li>
+                <li>
+                    <a href="https://facebook.com/groups/672554158442758/"><div class="red-Face" id="Face"></div></a><!-- Link -->
+                    <label for="Face">Facebook</label><!-- Nombre -->
+                </li>
+                <li>
+                    <a href="#"><div class="red-What" id="What"></div></a><!-- Link -->
+                    <label for="What">WhatsApp</label><!-- Nombre -->
+                </li>
+                <li>
+                    <a href="#"><div class="red-Only" id="Only"></div></a><!-- Link -->
+                    <label for="Only">OnlyFans</label><!-- Nombre -->
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- Pie de pagina -->
+    <footer class="footer-pie_de_pagina">
+        <div class="footer-pie1">
+            <!-- Contenedor de seccion 1 -->
+            <h6>Ceviche el Pirata</h6><!-- Nombre del local -->
+            <hr>
+            <div class="footer__container-img">
+                <img class="logo_footer" src="../Img/logo.jpg" alt="Logo de el local de ceviche"><!-- Logo -->
+                <!-- Palabras de marketing -->
+                <p>Plataforma de marketing, menus y distribucion de informacion sobre el local de "Ceviche el Pirata"</p>
+            </div>
+            <label>Redes Sociales:</label><!-- Sub titulo -->
+            <ul>
+                <!-- Redes sociales -->
+                <li><a href="#">--Instagram--</a></li>
+                <li><a href="https://facebook.com/groups/672554158442758/" target="_blank">--Facebook--</a></li>
+                <li><a href="#">--WhatsApp--</a></li>
+                <li><a href="#">--OnliFans--</a></li>
+            </ul>
+        </div>
+        <div class="footer-pie2">
+            <!-- Contenedor de seccion 2 -->
+            <label>Creditos:</label>
+            <ul>
+                <!-- Participantes -->
+                <li>Miguel A. Hernandez Mtz.</li><!-- Frontend -->
+                <li>Osviel A. Garcia S.</li><!-- Backend -->
+                <li>Leonardo Alvarez Vrg.</li><!-- Chef -->
+                <br>
+                <label>Maestro:</label>
+                <li>Juan Fer. Perez Esp.</li><!-- Profesor -->
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

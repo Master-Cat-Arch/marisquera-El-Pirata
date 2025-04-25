@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categoria</title>
+    <link rel="stylesheet" href="style__pag-categoria.css">
+    <link rel="icon" href="../Img/icono.jpg">
+    <script src="script__pag-categoria.js"></script>
+</head>
+<body>
+    <!-- Menu en la barra superior (en modo de computadoras) o en toda la pantalla (en modo de telefono) -->
+    <header id="header" class="header__menu">
+        <div class="header__container-menu">
+            <!-- Contenedor de objetos para modo de telefono -->
+            <input type="checkbox" id="open-menu"><!-- Indicado de estado del menu y mantenerlo abierto o cerrado -->
+            <label for="open-menu" class="menu-open--nav" role="button">≡</label><!-- Activador o desactivador del checkbox -->
+            <nav class="nav-menu" id="nav-menu">
+                <div class="menu__container-logo2" id="menu__container-logo1">
+                    <a href="../index.html" onclick="CerrarInp()"><img class="menu__img-logo2" src="../Img/logo.jpg" type="jpg"></a><!-- Imagen de el Logo para modo de telefono-->
+                    <div class="logo2-text">
+                        <!-- Titulo y nombre o seccion de la pagina -->
+                        <label>Ceviche el Pirata</label><!-- Titulo del Menu -->
+                        <a href="#">_((CATEGORIA))_</a><!-- Nombre Pagina -->
+                    </div>
+                </div>
+                <hr>
+                <ul class="menu__nav-list">
+                    <!-- Menu de occiones -->
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="../Pag-Menu/index__pag-menu.html">Menu </a></li>
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="../Pag-Contacto/inedx__pag-contacto.html">Contacto </a></li>
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="../Pag-Reservaciones/inedx__pag-reservaciones.html">Reservaciones </a></li>
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="inedx__pag-categoria.html">Categoria </a></li>
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="../Pag-Acerca-de/inedx__pag-acerca-de.html">Acerca de</a></li>
+                    <!-- onclick="CerrarInp()": Sirve para cerrar el menu al hacer click en cada una de las occiones -->
+                </ul>
+            </nav>
+        </div>
+        <div class="header__container-logo1">
+            <!-- Contenedor de el logo -->
+            <a href="../index.html" onclick="CerrarInp()"><img class="img-logo1" src="../Img/logo_.png" type="png" alt="Logo de el Pirata" title="Logo de el Pirata"></a><!-- Imagen 2 para modo de computadora -->
+        </div>
+    </header>
+
+    <!-- Contenedor de imagen y sobre la informacion del chef -->
+    <main class="container-main">
+        <div class="container-categoria">
+            <div class="container-img_leo">
+                <!-- Contenedor de imagen del chef -->
+                <img id="Img-Leo" src="../Img/img-leo.jpg" alt="Imagen del chef Leonardo" title="El marisquero mas papucho de todos" oncontextmenu="CambioImg();return false"><!-- Imagen del chef -->
+            </div>
+            <div class="container-info" id="categoria">
+                <!-- Contenedor sobre la informacion y experiencia del chef -->
+                <h4>Leonardo, el Maestro de el Ceviche</h4><!-- Nombre del chef -->
+                <p class="star"><b style="text-shadow: 0 0 0;">Estrellas: </b>⭐⭐⭐⭐</p><!-- Estrellas -->
+                <hr>
+                <p><b>Descripcion:</b></p><!-- Sub titulo -->
+                <!-- Descripcion -->
+                <p>En <b>Ceviche el Pirata</b>, contamos con la destreza y pasion de "Leonardo", un chef con algunos años d experiencia en la cocina marina. Su talento para covinar ingredientes frescos y equilibrar sabores lo convierte en un verdadero artista del ceviche.</p>
+                <p>Cada plato refleja su dedicacion a la calidad, seleccionando los mejores pescados y mariscos, acompañados de ingredientes naturales que resaltan su sabor.</p>
+                <br>
+                <p>Su secreto radica de su frescura, el punto exacto de acidez y el toque especial que solo el sabe dar. Ven y comprueva el autentico sabor del mar con la firma de "Leonardo"</p>
+                <br>
+                <p><b>Habilidades:</b></p><!-- Sub titulo -->
+                <!-- No tiene habilidades mas que estas -->
+                <p>Si</p><!-- Si -->
+                <ul>
+                    <li>Ser un papucho</li>
+                    <li>Teton</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de pagina -->
+    <footer class="footer-pie_de_pagina">
+        <div class="footer-pie1">
+            <!-- Contenedor de seccion 1 -->
+            <h6>Ceviche el Pirata</h6><!-- Nombre del local -->
+            <hr>
+            <div class="footer__container-img">
+                <img class="logo_footer" src="../Img/logo.jpg" alt="Logo de el local de ceviche"><!-- Logo -->
+                <!-- Palabras de marketing -->
+                <p>Plataforma de marketing, menus y distribucion de informacion sobre el local de "Ceviche el Pirata"</p>
+            </div>
+            <label>Redes Sociales:</label><!-- Sub titulo -->
+            <ul>
+                <!-- Redes sociales -->
+                <li><a href="#">--Instagram--</a></li>
+                <li><a href="https://facebook.com/groups/672554158442758/" target="_blank">--Facebook--</a></li>
+                <li><a href="#">--WhatsApp--</a></li>
+                <li><a href="#">--OnliFans--</a></li>
+            </ul>
+        </div>
+        <div class="footer-pie2">
+            <!-- Contenedor de seccion 2 -->
+            <label>Creditos:</label>
+            <ul>
+                <!-- Participantes -->
+                <li>Miguel A. Hernandez Mtz.</li><!-- Frontend -->
+                <li>Osviel A. Garcia S.</li><!-- Backend -->
+                <li>Leonardo Alvarez Vrg.</li><!-- Chef -->
+                <br>
+                <label>Maestro:</label>
+                <li>Juan Fer. Perez Esp.</li><!-- Profesor -->
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

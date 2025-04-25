@@ -1,31 +1,59 @@
-//Esto tambien esta en su base de datos
-const DtMenu = [
-    {/* Lo nuevo, primero para que lo veas mas facil pero ponlos en su lugar sino salen chuecos */
-        id:"100",
-        img:"img_ceviche.jpg",
-        nombre:"Ceviche",
-        categoria:"Ceviche",
-        estrellas:5,
-        percio:"Nose",
-        tamano:"Normal"
-    },{
-        id:"605",
-        img:"img_ostiones.png",
-        nombre:"Ostiones",
-        categoria:"Otros",
-        estrellas:0,
-        percio:"Nose",
-        tamano:"Normal"
-    },{
-        id:"606",
-        img:"img_carpa.jpg",
-        nombre:"Carpa",
-        categoria:"Otros",
-        estrellas:0,
-        percio:"Nose",
-        tamano:"Normal"
-    },      /* Hasta aqui */
+let DtMenu = []; // Declara DtMenu como una variable global
+console.log('Datos en DtMenu:', DtMenu);
 
+
+async function cargarMenu() 
+{
+    try 
+    {
+        const response = await fetch('http://localhost/marisquera-El-Pirata-2/Pag-Menu/index.php');
+        const texto = await response.text();
+        console.log('Texto recibido del servidor:', texto); // Depuración: Verifica la respuesta como texto
+
+        const data = JSON.parse(texto);
+        console.log('Datos convertidos a JSON:', data); // Depuración: Verifica los datos convertidos
+
+        if (data.error) {
+            console.error('Error del servidor:', data.error);
+            return;
+        }
+
+        DtMenu = data; // Almacena los datos en DtMenu
+        console.log('Datos cargados en DtMenu:', DtMenu); // Depuración: Verifica que DtMenu tenga datos
+
+        const container = document.getElementById('container-productos');
+        container.innerHTML = ''; // Limpia el contenedor
+
+        data.forEach(platillo => {
+            const productoDiv = document.createElement('div');
+            productoDiv.classList.add('cont-prod');
+
+            productoDiv.innerHTML = `
+                <div class="cont-img">
+                    <a href="#"><img src="../Img/${platillo.Img}" alt="${platillo.Nombre}"></a>
+                </div>
+                <div class="info-prod">
+                    <h6>${platillo.Nombre}</h6>
+                    <hr>
+                    <div class="pre-estr">
+                        <label class="prod-precio"><b>Precio: $${platillo.Precio}</b></label>
+                        <p class="prod-estrellas">${'⭐'.repeat(platillo.Estrellas)}</p>
+                        <label class="prod-tamano"><b>${platillo.Tamaño}</b></label>
+                    </div>
+                </div>
+            `;
+            container.appendChild(productoDiv);
+        });
+    } catch (error) {
+        console.error('Error al cargar el menú:', error);
+    }
+}
+// Llama a la función al cargar la página
+document.addEventListener('DOMContentLoaded', cargarMenu);
+
+
+/*
+const DtMenu = [
     //// Tostadas ////
     {
         id:"101",
@@ -260,4 +288,4 @@ const DtMenu = [
         percio:90,
         tamano:"350ml"
     },
-];
+];*/

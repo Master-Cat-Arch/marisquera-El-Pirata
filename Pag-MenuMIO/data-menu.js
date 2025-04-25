@@ -2,8 +2,10 @@ let DtMenu = []; // Declara DtMenu como una variable global
 console.log('Datos en DtMenu:', DtMenu);
 
 
-async function cargarMenu() {
-    try {
+async function cargarMenu() 
+{
+    try 
+    {
         const response = await fetch('http://localhost/marisquera-El-Pirata-2/Pag-Menu/index.php');
         const texto = await response.text();
         console.log('Texto recibido del servidor:', texto); // Depuración: Verifica la respuesta como texto
@@ -35,7 +37,7 @@ async function cargarMenu() {
                     <hr>
                     <div class="pre-estr">
                         <label class="prod-precio"><b>Precio: $${platillo.Precio}</b></label>
-                        <p class="prod-estrellas">${'★'.repeat(platillo.Estrellas)}</p>
+                        <p class="prod-estrellas">${'⭐'.repeat(platillo.Estrellas)}</p>
                         <label class="prod-tamano"><b>${platillo.Tamaño}</b></label>
                     </div>
                 </div>

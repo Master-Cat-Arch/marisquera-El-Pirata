@@ -16,19 +16,19 @@ $tamano = $_GET['Tamaño'] ?? null;
 $platillo = $_GET['Platillo'] ?? null;
 
 if ($categoria) {
-    $query = "SELECT * FROM DatosPlatillos WHERE Categoria = ?";
+    $query = "SELECT * FROM MenúPlatillos WHERE Categoria = ?";
     $stmt = $conexion->prepare($query);
     $stmt->bind_param('s', $categoria);
 } elseif ($tamano) {
-    $query = "SELECT * FROM DatosPlatillos WHERE Tamaño = ?";
+    $query = "SELECT * FROM MenúPlatillos WHERE Tamaño = ?";
     $stmt = $conexion->prepare($query);
     $stmt->bind_param('s', $tamano);
 } elseif ($platillo) {
-    $query = "SELECT * FROM DatosPlatillos WHERE Nombre = ?";
+    $query = "SELECT * FROM MenúPlatillos WHERE Nombre = ?";
     $stmt = $conexion->prepare($query);
     $stmt->bind_param('s', $platillo);
 } else {
-    $query = "SELECT * FROM DatosPlatillos";
+    $query = "SELECT * FROM MenúPlatillos";
     $stmt = $conexion->prepare($query);
 }
 
@@ -52,9 +52,9 @@ $conexion->close();
 /*
 $categoria = $_GET['Categoria'] ?? 'Todos';
 if ($categoria === 'Todos') {
-    $query = "SELECT * FROM DatosPlatillos";
+    $query = "SELECT * FROM MenúPlatillos";
 } else {
-    $query = "SELECT * FROM DatosPlatillos WHERE Categoria = ?";
+    $query = "SELECT * FROM MenúPlatillos WHERE Categoria = ?";
 }
 $stmt = $conexion->prepare($query);
 if ($categoria !== 'Todos') {

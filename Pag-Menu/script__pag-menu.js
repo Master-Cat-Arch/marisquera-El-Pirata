@@ -15,7 +15,7 @@ DtMenu.forEach(Prodt  =>{
 async function cargarMenu() 
 {
     try {
-        const response = await fetch('localhost/marisquera-El-Pirata-2/Pag-Menu/index.php');
+        const response = await fetch('localhost/marisquera-El-Pirata/Pag-Menu/index.php');
         const texto = await response.text();
         console.log('Respuesta del servidor:', texto); // Verifica la respuesta aquí
         const data = JSON.parse(texto);

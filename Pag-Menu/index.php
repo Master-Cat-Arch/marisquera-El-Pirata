@@ -4,12 +4,14 @@ header('Content-Type: application/json');
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
 // Conexión a la base de datos
 $conexion = new mysqli('localhost', 'root', '', 'DatosPlatillos');
 if ($conexion->connect_error) {
     echo json_encode(['error' => 'Error de conexión a la base de datos']);
     exit;
 }
+
 // Obtiene los parámetros de la solicitud
 $categoria = $_GET['Categoria'] ?? null;
 $tamano = $_GET['Tamaño'] ?? null;
@@ -43,10 +45,23 @@ $platillos = [];
 while ($row = $result->fetch_assoc()) {
     $platillos[] = $row;
 }
+
+// Verifica si no hay resultados
+if (empty($platillos)) {
+    echo json_encode(['error' => 'No se encontraron platillos']);
+    exit;
+}
+
 // Asegúrate de que siempre se envíe un JSON válido
 echo json_encode($platillos);
+if (json_last_error() !== JSON_ERROR_NONE) {
+    echo json_encode(['error' => 'Error al codificar JSON: ' . json_last_error_msg()]);
+    exit;
+}
+
 $stmt->close();
 $conexion->close();
+?>
 
 // Obtiene la categoría de la solicitud
 /*

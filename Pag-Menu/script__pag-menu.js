@@ -6,18 +6,27 @@ const Details1 = document.getElementById("details-1");
 
 if(window.innerWidth < 700){Details1.removeAttribute("open");}
 
-DtMenu.forEach(Prodt  =>{
-    MostrarMenu(Prodt);
-});
+if (DtMenu.length === 0) {
+    console.warn('DtMenu está vacío. Asegúrate de cargar los datos antes de usarlo.');
+} else {
+    DtMenu.forEach(Prodt => {
+        MostrarMenu(Prodt);
+    });
+}
 
 
 // ############################## FUNCIONES PARA EL MENÚ #################################
 async function cargarMenu() 
 {
     try {
-        const response = await fetch('localhost/marisquera-El-Pirata/Pag-Menu/index.php');
+        const response = await fetch('https://mariscoselpirata.x10.mx/marisquera-El-Pirata/Pag-Menu/index.php');
+        
+        if (!response.ok) {
+            throw new Error(`Error en la solicitud: ${response.status} ${response.statusText}`);
+        }
+
         const texto = await response.text();
-        console.log('Respuesta del servidor:', texto); // Verifica la respuesta aquí
+        console.log('Respuesta del servidor:', texto); // Depuración
         const data = JSON.parse(texto);
 
         if (data.error) {
@@ -26,6 +35,7 @@ async function cargarMenu()
         }
 
         DtMenu = data; // Almacena los datos en DtMenu
+        console.log('Datos cargados en DtMenu:', DtMenu); // Depuración
         Todo(); // Muestra todos los platillos
     } catch (error) {
         console.error('Error al cargar el menú ;´v :', error);
@@ -49,18 +59,28 @@ function MostrarMenu(Prodt2)
             <hr>
             <div class="pre-estr">
                 <label class="prod-precio"><b>Precio: $${Prodt2.Precio}</b></label>
-                <p class="prod-estrellas">${'★'.repeat(Prodt2.Estrellas || 0)}</p>
+                <p class="prod-estrellas">${'⭐'.repeat(Prodt2.Estrellas || 0)}</p>
                 <label class="prod-tamano"><b>${Prodt2.Tamaño || 'N/A'}</b></label>
             </div>
         </div>
     `;
+    // Verifica si Prodt2 tiene los datos necesarios antes de agregarlo al contenedor
+    // Esto evita errores si los datos no están completos
+    if (!Prodt2 || !Prodt2.Nombre || !Prodt2.Precio) {
+        console.warn('Datos incompletos para el platillo:', Prodt2);
+        return;
+    }
     MostProd.appendChild(CreaDiv);
 }
 
 
 // Función genérica para filtrar y mostrar platillos por CATEGORÍA desde la base de datos
 async function OctionSummary(OctSum) 
-{
+{   //normaliza la categoría a minúsculas y elimina espacios en blanco
+    const categoriaNormalizada = OctSum.trim().toLowerCase();
+    console.log(`Filtrando por categoría: ${categoriaNormalizada}`);
+    MostProd.innerHTML = ""; // Limpia el contenedor
+
     console.log(`Filtrando por categoría: ${OctSum}`);
     MostProd.innerHTML = ""; // Limpia el contenedor
 
@@ -70,6 +90,9 @@ async function OctionSummary(OctSum)
         const response = await fetch(`index.php?Categoria=${encodeURIComponent(OctSum)}`);
         const data = await response.json();
 
+        if (!response.ok) {
+            throw new Error(`Error en la solicitud: ${response.status} ${response.statusText}`);
+        }
         if (data.error) {
             console.error('Error del servidor (Octsumary/Categoría) :', data.error);
             return;
@@ -85,6 +108,7 @@ async function OctionSummary(OctSum)
         {
             console.error('Error al filtrar por categoría :c :', error);
         }
+        
     Details1.removeAttribute("open"); // Cierra el menú desplegable si está abierto
 }
 
@@ -99,6 +123,9 @@ async function buscarPorPlatillo(platillo) {
         const response = await fetch(`index.php?Platillo=${encodeURIComponent(platillo)}`);
         const data = await response.json();
 
+        if (!response.ok) {
+            throw new Error(`Error en la solicitud: ${response.status} ${response.statusText}`);
+        }
         if (data.error) {
             console.error('Error del servidor (nombre del platillo) :', data.error);
             return;
@@ -130,6 +157,9 @@ async function Todo() {
         const response = await fetch('index.php?categoria=Todos');
         const data = await response.json();
 
+        if (!response.ok) {
+            throw new Error(`Error en la solicitud: ${response.status} ${response.statusText}`);
+        }
         if (data.error) {
             console.error('Error del servidor (obtener todos los platillos) :', data.error);
             return;
@@ -165,3 +195,7 @@ function Otro() {OctionSummary("Otros");}
 function Bebi(){OctionSummary("Bebidas");}
 // Función para mostrar solo las micheladas :
 function Mich() {OctionSummary("Micheladas");}
+
+document.addEventListener('DOMContentLoaded', () => {
+    Todo(); // Carga todos los platillos al abrir el menú
+});

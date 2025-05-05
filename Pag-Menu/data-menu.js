@@ -6,12 +6,14 @@ async function cargarMenu()
 {
     try 
     {
-        const response = await fetch('http://localhost/marisquera-El-Pirata/Pag-Menu/index.php');
-        const texto = await response.text();
-        console.log('Texto recibido del servidor:', texto); // Depuración: Verifica la respuesta como texto
+        const response = await fetch('https://mariscoselpirata.x10.mx/marisquera-El-Pirata/Pag-Menu/'); // Cambia la URL según tu API
+        
+        if (!response.ok) {
+            throw new Error(`Error en la solicitud: ${response.status}`);
+        }
 
-        const data = JSON.parse(texto);
-        console.log('Datos convertidos a JSON:', data); // Depuración: Verifica los datos convertidos
+        const data = await response.json(); // Convierte la respuesta a JSON
+        console.log('Datos cargados:', data); // Depuración: Verifica los datos recibidos
 
         if (data.error) {
             console.error('Error del servidor:', data.error);

@@ -47,36 +47,43 @@
         <h1>Datos de Reservacion:</h1><!-- Titulo principal -->
         <div class="reservacion-container">
             <div class="reservacion" id="reservacion">
-                <form><!-- formulario -->
+
+        <!--#####################                          ######################-->
+                <form action="indexRES.php" method="post"><!-- formulario -->
                     <fieldset>
                         <legend>Datos Personales</legend><!-- Seccion -->
                         <label for="inp_name">Escribe tu Nombre:</label>
-                        <input type="text" name="inp_name" id="inp-name" placeholder="John Doe/Jane Doe">
+                        <input type="text" name="Nombre" id="inp-name" placeholder="John Doe/Jane Doe" 
+                        required>
                         <label for="inp_gmail">Ingresa tu Correo:</label>
-                        <input type="email" name="inp_gmail" id="inp-gmail" placeholder="john@something.com">
+                        <input type="email" name="Correo" id="inp-gmail" placeholder="john@something.com">
                         <div class="nums">
                             <!-- Contenedor de numeros de telefono -->
                             <div class="num1">
                                 <label for="inp_number">Telefono / Movil:</label>
-                                <input type="tel" name="inp_number" id="inp-number" placeholder="Telephone Number">
+                                <input type="tel" name="Telefono1" id="inp-number" placeholder="Telephone Number" 
+                                required>
                             </div>
                             <div class="num2">
                                 <label for="inp_number2">Telefono2 / Extra:</label>
-                                <input type="tel" name="inp_number2" id="inp-number2" placeholder="Telephone Extra">
+                                <input type="tel" name="Telefono2" id="inp-number2" placeholder="Telephone Extra">
                             </div>
                         </div>
                     </fieldset>
                     <label for="inp_date">Fecha de Reservacion:</label>
-                    <input type="date" name="inp_date" id="inp-date">
+                    <input type="date" name="Fecha" id="inp-date" 
+                    required>
                     <label for="inp_info">Detalles de su visita:</label>
-                    <textarea style="resize: none;" name="inp_info" id="inp_info" placeholder="Detalles o razon de su visita"></textarea>
+                    <textarea style="resize: none;" name="Detalles" id="inp_info" placeholder="Detalles o razon de su visita" required></textarea>
                     <br>
                     <div class="buttons">
                         <!-- Botones de accion -->
-                        <input class="btnEnviar" type="button" value="Enviar" onclick="Reservar()">
-                        <input class="btnBorrar" type="button" value="Borrar" onclick="Borrar()">
+                        <input class="btnEnviar" type="submit" value="Enviar"> 
+                        <input class="btnBorrar" type="reset" value="Borrar">
                     </div>
                 </form>
+       <!--#####################                          ######################-->
+
             </div>
         </div>
         <div class="pedido-container">

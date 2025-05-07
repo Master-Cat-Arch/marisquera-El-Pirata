@@ -1,10 +1,10 @@
 :root{/* Variables globales */
     --ColorFondoClaro: rgb(243, 243, 243);
     --ColorFondoClaro2: rgb(224, 235, 219);
-    --ColorFondoClaro3: rgb(238, 204, 159);
+    --ColorFondoClaro3: rgb(235, 199, 145);
     --ColorFondoOscuro: rgb(221, 221, 221);
     --ColorFondoOscuro2: rgb(173, 173, 173);
-    --ColorFondoOscuro3: rgb(211, 169, 115);
+    --ColorFondoOscuro3: rgb(199, 169, 125);
     --ColorLetra: aliceblue;
     --ColorLetra2: rgb(233, 62, 19);
 }
@@ -119,8 +119,32 @@ body{
                         text-decoration: none;
                         padding: 8px 25vw;
                         border-radius: 8px;
-                    }
+                    }    
                 }
+                #li-login{/* NUevo estilo para el boton de inicio de sesion */
+                    .login{
+                        background-color: var(--ColorFondoClaro3);
+                        border-radius: 10px;
+                        padding: 10px 15vw;
+                        margin-top: 30px;
+                        font-size: 15px;
+                        color: white;
+                        text-shadow: 1px 1px 1px black;
+                        box-shadow: 5px 5px 5px rgb(142, 150, 134);
+                        border: 0;
+                    }
+                    .login :is(:hover,:active){
+                        transition: .2s;
+                        border-radius: 10px;
+                        box-shadow: 5px 5px 15px rgb(130, 138, 120);
+                    }
+                    .login:hover{background-color: var(--ColorFondoOscuro3);}
+                    .login:active{background-color: var(--ColorFondoClaro3);}
+                }
+                #li-login :hover{
+                    border: transparent;
+                    background: none;
+                }/* Hasta aqui los estilos de boton */
                 .nav__li-item :is(:hover,:active){
                     text-decoration: underline;
                     font-style: italic;
@@ -192,6 +216,23 @@ body{
                         border: 1px solid;
                         border-radius: 20px;
                     }
+                    #li-login{/* Nuevo estilo para el boton de inico de sesion */
+                        padding: 22px 0;
+                        margin: 0 20px 0 30px;
+                        a{
+                            background-color: transparent;
+                            color: transparent;
+                            border: 0;
+                            font-size: 20px;
+                        }
+                        .login{
+                            padding: 12px 25px;
+                            margin: 0;
+                            font-size: 20px;
+                            color: white;
+                            box-shadow: 5px 5px 10px rgb(136, 139, 133);
+                        }
+                    }/* Hasta aqui los nuevos estilos */
                 }
             }
         }

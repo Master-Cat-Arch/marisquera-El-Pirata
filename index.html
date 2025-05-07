@@ -42,6 +42,14 @@
             <!-- Contenedor de el logo -->
             <a href="index.html" onclick="CerrarInp()"><img class="img-logo1" src="Img/logo_.png" type="png" alt="Logo de el Pirata" title="Logo de el Pirata"></a><!-- Imagen 2 para modo de computadora -->
         </div>
+
+<a href="Login/logout.php">Cerrar sesión</a> <!--enlace par cerrar la sesión [FRONTEND, hagalo bonito]-->
+<!--<script>
+    const mostrarSecciones = <?php echo json_encode($mostrarSecciones); ?>;
+    if (mostrarSecciones) {
+        document.querySelectorAll('.seccion-oculta').forEach(el => el.style.display = 'block');
+    }
+</script>-->
     </header>
     
     <!-- Seccion principal -->
@@ -149,5 +157,14 @@
             </ul>
         </div>
     </footer>
+
+<!--llamado al PHP de inicio de sesión-->
+<?php
+// filepath: /media/not2/GROVERMEK/marisquera-El-Pirata/index.html
+session_start();
+$mostrarSecciones = isset($_SESSION['usuario']);
+?>
+
+
 </body>
 </html>

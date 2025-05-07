@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container-login">
-        <form action="../index.html">
+        <form action="procesar_login.php" method="POST">
             <h1>Login</h1>
             <div class="input-box">
                 <input type="text" name="usuario" id="inp-usuario" placeholder="Username" required>
@@ -28,5 +28,16 @@
             </div>
         </form>
     </div>
+<?php if (isset($_GET['error'])): ?>
+    <p class="error">
+        <?php
+        if ($_GET['error'] === 'contraseña_incorrecta') {
+            echo "Contraseña incorrecta.";
+        } elseif ($_GET['error'] === 'usuario_no_encontrado') {
+            echo "Usuario no encontrado.";
+        }
+        ?>
+    </p>
+<?php endif; ?>
 </body>
 </html>

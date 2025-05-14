@@ -34,7 +34,28 @@
                     <li class="nav__li-item"><a onclick="CerrarInp()" href="Pag-Acerca-de/inedx__pag-acerca-de.html">Acerca de</a></li>
                     <!-- onclick="CerrarInp()": Sirve para cerrar el menu al hacer click en cada una de las occiones -->
                     <!-- Nuevo boton de Login para el inicio de seccion en usuarios o administradores -->
-                    <li class="nav__li-item" id="li-login"><a href="Login/index__login.html"><input class="login" id="login" type="button" value="Login"></a></li>
+                    <li class="nav__li-item" id="li-login">
+                        <details class="container-cuenta_login">
+                            <summary class="img-cuenta_login">
+                                <!-- <a href="Login/index__login.html"><input class="login" id="login" type="button" value="Login"></a> -->
+                                <img src="Img/img-Osvi2.png" class="img-login" alt="Imagen Usuario">
+                            </summary>
+                            <!-- <p class="user-nombre">Hola Mundo</p> -->
+                             <div class="container-cuenta_info">
+                                <h6 class="nombre-cuenta" id="nom-cuenta">Hola Mundo</h6>
+                                <hr>
+                                <div class="btns-accion_cuenta">
+                                    <a href="Login/index__login.html"><input class="btn-login" type="button" value="Login"></a>
+                                    <a href="Login/logout.php"><input class="btn-cerrar_sesion" type="button" value="Cerrar-sesión"></a>
+                                </div>
+                             </div>
+                        </details>
+
+                        <!-- <details>
+                            <summary><a href="Login/index__login.html"><input class="login" id="login" type="button" value="Login"></a></summary>
+                            <a href="Login/logout.php"><input style="margin: 10px;" class="login" id="login" type="button" value="Cerrar sesión"></a>
+                        </details> -->
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -42,19 +63,11 @@
             <!-- Contenedor de el logo -->
             <a href="index.html" onclick="CerrarInp()"><img class="img-logo1" src="Img/logo_.png" type="png" alt="Logo de el Pirata" title="Logo de el Pirata"></a><!-- Imagen 2 para modo de computadora -->
         </div>
-
-<a href="Login/logout.php">Cerrar sesión</a> <!--enlace par cerrar la sesión [FRONTEND, hagalo bonito]-->
-<!--<script>
-    const mostrarSecciones = <?php echo json_encode($mostrarSecciones); ?>;
-    if (mostrarSecciones) {
-        document.querySelectorAll('.seccion-oculta').forEach(el => el.style.display = 'block');
-    }
-</script>-->
     </header>
     
     <!-- Seccion principal -->
     <section class="sec-especialidad">
-        <img class="img-especialidad" id="img-especialidad" src="Img/img-principal.jpg" alt="Imágen del platillo principal" title="Especialidad" oncontextmenu="CambioImg();return false"><!-- Imagen principal de promocion del ceviche -->
+        <img class="img-especialidad" id="img-especialidad" src="Img/img-principal.jpg" alt="Imágen del platillo principal" title="Especialidad"><!-- Imagen principal de promocion del ceviche -->
         <div class="info-enpleado">
             <!-- Texto de promocion -->
             <h2>DELICIAS DE LA CASA</h2>
@@ -62,9 +75,9 @@
                 Les ofrecemos una muy grande variedad de productos marinos y terrestres como milanesas de pollo, hamburguesas, etc. </p>
             <div class="inf-leo">
                 <!-- Contenedor de info del chef -->
-                <img class="img-leo" id="img-leo" src="Img/img-leo.jpg" alt="imagen del chef" title="hay mi leonardito"><!-- Imagen del chef -->
+                <img class="img-leo" id="img-leo" src="Img/img-leo.jpg" alt="imagen del chef" title="hay mi leonardito" oncontextmenu="CambioImg();return false"><!-- Imagen del chef -->
                 <div>
-                    <label id="chef-leo">Leonardo Alvarez Vega.<label/><!-- Nombre del chef -->
+                    <label id="chef-leo">Leonardo Alvarez Vega.</label> <!-- Nombre del chef -->
                     <p>Empleado del mes.</p><!-- Logro -->
                 </div>
             </div>
@@ -157,14 +170,11 @@
             </ul>
         </div>
     </footer>
-
 <!--llamado al PHP de inicio de sesión-->
 <?php
 // filepath: /media/not2/GROVERMEK/marisquera-El-Pirata/index.html
 session_start();
 $mostrarSecciones = isset($_SESSION['usuario']);
 ?>
-
-
 </body>
 </html>

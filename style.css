@@ -106,9 +106,10 @@ body{
             .menu__nav-list{
                 display: flex;
                 flex-direction: column;
-                margin: 0 auto auto;
+                margin: 10px auto;
                 justify-content: space-evenly;
-                height: 40vh;
+                max-height: 70vh;
+                height: 50vh;
                 text-align: center;
                 .nav__li-item{
                     list-style: none;
@@ -121,36 +122,74 @@ body{
                         border-radius: 8px;
                     }    
                 }
-                #li-login{/* NUevo estilo para el boton de inicio de sesion */
-                    .login{
-                        background-color: var(--ColorFondoClaro3);
-                        border-radius: 10px;
-                        padding: 10px 15vw;
-                        margin-top: 30px;
-                        font-size: 15px;
-                        color: white;
-                        text-shadow: 1px 1px 1px black;
-                        box-shadow: 5px 5px 5px rgb(142, 150, 134);
-                        border: 0;
+
+                #li-login{/* Nuevo estilo */
+                    border: 0px solid black;
+                    margin: 20px;
+                    border-radius: 10px;
+                    a{padding: 0;}
+                    .container-cuenta_login{
+                        max-height: 200px;
+                        min-height: auto;
+                        padding: 15px;
+                        text-align: center;
+                        .img-cuenta_login{
+                            list-style: none;
+                            .img-login{
+                                border: 1px solid rgb(247, 151, 151);
+                                border-radius: 50%;
+                                width: 60px;
+                            }
+                        }
+                        h6{
+                            font-size: 15px;
+                            margin: 5px auto 10px;
+                        }
+                        hr{
+                            width: 90%;
+                            margin: 10px;
+                        }
+                        .btns-accion_cuenta{
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            gap: 10px;
+                            input{
+                                background-color: var(--ColorFondoClaro3);
+                                border-radius: 7px;
+                                border: 0;
+                                box-shadow: 3px 3px 5px rgb(142, 150, 134);
+                                padding: 5px;
+                            }
+                            input :is(:hover,:active){
+                                border-radius: 10px;
+                                box-shadow: 5px 5px 15px rgb(130, 138, 120);
+                                transition: .2s;
+                            }
+                            input:hover{background-color: var(--ColorFondoOscuro3);}
+                            input:active{background-color: var(--ColorFondoClaro3);}
+                        }
                     }
-                    .login :is(:hover,:active){
-                        transition: .2s;
-                        border-radius: 10px;
-                        box-shadow: 5px 5px 15px rgb(130, 138, 120);
+                    .container-cuenta_login[open]{
+                        background-color: var(--ColorFondoOscuro);
+                        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.336);
+                        border-radius: 8px;
+                        transition: .4s;
                     }
-                    .login:hover{background-color: var(--ColorFondoOscuro3);}
-                    .login:active{background-color: var(--ColorFondoClaro3);}
-                }
+                }/* Si */
                 #li-login :hover{
                     border: transparent;
                     background: none;
-                }/* Hasta aqui los estilos de boton */
+                    text-decoration: none;
+                    font-style: normal;
+                }
+
                 .nav__li-item :is(:hover,:active){
+                    background-color: var(--ColorFondoOscuro);
+                    border: 1px solid var(--ColorLetra);
                     text-decoration: underline;
                     font-style: italic;
                     transition: .3s;
-                    border: 1px solid var(--ColorLetra);
-                    background-color: var(--ColorFondoOscuro);
                 }
             }
         }
@@ -216,9 +255,16 @@ body{
                         border: 1px solid;
                         border-radius: 20px;
                     }
-                    #li-login{/* Nuevo estilo para el boton de inico de sesion */
-                        padding: 22px 0;
+                    #li-login{
+                        padding: 0 0 22px;
                         margin: 0 20px 0 30px;
+                        .container-cuenta_login[open]{/* Nuevo estilo */
+                            background-color: var(--ColorFondoOscuro);
+                            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.658);
+                            position: absolute;
+                            top: 140px;
+                            right: 30px;
+                        }/* Si */
                         a{
                             background-color: transparent;
                             color: transparent;
@@ -232,7 +278,7 @@ body{
                             color: white;
                             box-shadow: 5px 5px 10px rgb(136, 139, 133);
                         }
-                    }/* Hasta aqui los nuevos estilos */
+                    }
                 }
             }
         }

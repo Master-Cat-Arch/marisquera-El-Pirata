@@ -19,7 +19,7 @@ if (DtMenu.length === 0) {
 async function cargarMenu() 
 {
     try {
-        const response = await fetch('https://mariscoselpirata.x10.mx/marisquera-El-Pirata/Pag-Menu/index.php');
+        const response = await fetch('https://mariscoselpirata.x10.mx/marisquera-El-Pirata/Pag-Menu/menuConexion.php');
         
         if (!response.ok) {
             throw new Error(`Error en la solicitud: ${response.status} ${response.statusText}`);
@@ -85,7 +85,7 @@ async function OctionSummary(OctSum)
     try 
     {
         // Realiza una solicitud al servidor con la categoría seleccionada
-        const response = await fetch(`index.php?Categoria=${encodeURIComponent(OctSum)}`);
+        const response = await fetch(`menuConexion.php?Categoria=${encodeURIComponent(OctSum)}`);
         const data = await response.json();
 
         if (!response.ok) {
@@ -117,7 +117,7 @@ async function buscarPorPlatillo(platillo) {
     try 
     {
         // Realiza una solicitud al servidor con el nombre del platillo
-        const response = await fetch(`index.php?Platillo=${encodeURIComponent(platillo)}`);
+        const response = await fetch(`menuConexion.php?Platillo=${encodeURIComponent(platillo)}`);
         const data = await response.json();
 
         if (!response.ok) {
@@ -152,7 +152,7 @@ async function Todo() {
     try 
     {
         // Realiza una solicitud al servidor para obtener todos los platillos
-        const response = await fetch('index.php?categoria=Todos');
+        const response = await fetch('menuConexion.php?categoria=Todos');
         const data = await response.json();
 
         if (!response.ok) {

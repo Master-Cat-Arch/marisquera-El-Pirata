@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservaciones</title>
+    <link rel="stylesheet" href="style__pag-reservaciones.css">
+    <link rel="icon" href="../Img/icono.jpg">
+    <script src="script__pag-reservaciones.js"></script>
+</head>
+<body>
+    <!-- Menu en la barra superior (en modo de computadoras) o en toda la pantalla (en modo de telefono) -->
+    <header id="header" class="header__menu">
+        <div class="header__container-menu">
+            <!-- Contenedor de objetos para modo de telefono -->
+            <input type="checkbox" id="open-menu"><!-- Indicado de estado del menu y mantenerlo abierto o cerrado -->
+            <label for="open-menu" class="menu-open--nav" role="button">≡</label><!-- Activador o desactivador del checkbox -->
+            <nav class="nav-menu" id="nav-menu">
+                <div class="menu__container-logo2" id="menu__container-logo1">
+                    <a href="../index.php" onclick="CerrarInp()"><img class="menu__img-logo2" src="../Img/logo.jpg" type="jpg"></a><!-- Imagen de el Logo para modo de telefono-->
+                    <div class="logo2-text">
+                        <!-- Titulo y nombre o seccion de la pagina -->
+                        <label>Ceviche el Pirata</label><!-- Titulo del Menu -->
+                        <a href="#">_((RESERVACIONES))_</a><!-- Nombre Pagina -->
+                    </div>
+                </div>
+                <hr>
+                <ul class="menu__nav-list">
+                    <!-- Menu de occiones -->
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="../Pag-Menu/index__pag-menu.html">Menu </a></li>
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="../Pag-Contacto/inedx__pag-contacto.html">Contacto </a></li>
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="inedx__pag-reservaciones.html">Reservaciones </a></li>
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="../Pag-Categoria/inedx__pag-categoria.html">Categoria </a></li>
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="../Pag-Acerca-de/inedx__pag-acerca-de.html">Acerca de</a></li>
+                    <!-- onclick="CerrarInp()": Sirve para cerrar el menu al hacer click en cada una de las occiones -->
+                </ul>
+            </nav>
+        </div>
+        <div class="header__container-logo1">
+            <!-- Contenedor de el logo -->
+            <a href="../index.php" onclick="CerrarInp()"><img class="img-logo1" src="../Img/logo_.png" type="png" alt="Logo de el Pirata" title="Logo de el Pirata"></a><!-- Imagen 2 para modo de computadora -->
+        </div>
+    </header>
+
+    <!-- Contenedor del formulario para hacer una recervacion y de el numero de telefono para realizar un pedido -->
+    <main class="main-container">
+        <h1>Datos de Reservacion:</h1><!-- Titulo principal -->
+        <div class="reservacion-container">
+            <div class="reservacion" id="reservacion">
+
+        <!--#####################                          ######################-->
+                <form action="indexRESconexion.php" method="post"><!-- formulario -->
+                    <fieldset>
+                        <legend>Datos Personales</legend><!-- Seccion -->
+                        <label for="inp_name">Escribe tu Nombre:</label>
+                        <input type="text" name="Nombre" id="inp-name" placeholder="John Doe/Jane Doe" 
+                        required>
+                        <label for="inp_gmail">Ingresa tu Correo:</label>
+                        <input type="email" name="Correo" id="inp-gmail" placeholder="john@something.com">
+                        <div class="nums">
+                            <!-- Contenedor de numeros de telefono -->
+                            <div class="num1">
+                                <label for="inp_number">Telefono / Movil:</label>
+                                <input type="tel" name="Telefono1" id="inp-number" placeholder="Telephone Number" 
+                                required>
+                            </div>
+                            <div class="num2">
+                                <label for="inp_number2">Telefono2 / Extra:</label>
+                                <input type="tel" name="Telefono2" id="inp-number2" placeholder="Telephone Extra">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <label for="inp_date">Fecha de Reservacion:</label>
+                    <input type="date" name="Fecha" id="inp-date" 
+                    required>
+                    <label for="inp_info">Detalles de su visita:</label>
+                    <textarea style="resize: none;" name="Detalles" id="inp_info" placeholder="Detalles o razon de su visita" required></textarea>
+                    <br>
+                    <div class="buttons">
+                        <!-- Botones de accion -->
+                        <input class="btnEnviar" type="submit" value="Enviar"> 
+                        <input class="btnBorrar" type="reset" value="Borrar">
+                    </div>
+                </form>
+       <!--#####################                          ######################-->
+
+            </div>
+        </div>
+        <div class="pedido-container">
+            <!-- Numero de contacto para hacer un pedido -->
+            <div class="pedido">
+                <h4>Contacto para reservar o hacer un pedido:</h4><!-- titulo -->
+                <label><img src="../Img/icono.jpg" alt="Icono WhatsApp">+52: 445 *139 6753*</label><!-- Telefono -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de pagina -->
+    <footer class="footer-pie_de_pagina">
+        <div class="footer-pie1">
+            <!-- Contenedor de seccion 1 -->
+            <h6>Ceviche el Pirata</h6><!-- Nombre del local -->
+            <hr>
+            <div class="footer__container-img">
+                <img class="logo_footer" src="../Img/logo.jpg" alt="Logo de el local de ceviche"><!-- Logo -->
+                <!-- Palabras de marketing -->
+                <p>Plataforma de marketing, menus y distribucion de informacion sobre el local de "Ceviche el Pirata"</p>
+            </div>
+            <label>Redes Sociales:</label><!-- Sub titulo -->
+            <ul>
+                <!-- Redes sociales -->
+                <li><a href="https://www.instagram.com/mari.scoselpirata?igsh=MTRiYXl3eHUwxbA==" target="_blank">--Instagram--</a></li>
+                <li><a href="https://facebook.com/groups/672554158442758/" target="_blank">--Facebook--</a></li>
+                <li><a href="https://wa.me/+524451396753?text=Hola%20Leonardos,%20Me%20gustaria..." target="_blank">--WhatsApp--</a></li>
+                <li><a href="https://of.com/" target="_blank">--OnliFans--</a></li>
+            </ul>
+        </div>
+        <div class="footer-pie2">
+            <!-- Contenedor de seccion 2 -->
+            <label>Creditos:</label>
+            <ul>
+                <!-- Participantes -->
+                <li>Miguel A. Hernandez Mtz.</li><!-- Frontend -->
+                <li>Osviel A. Garcia S.</li><!-- Backend -->
+                <li>Leonardo Alvarez Vrg.</li><!-- Chef -->
+                <br>
+                <label>Maestro:</label>
+                <li>Juan Fer. Perez Esp.</li><!-- Profesor -->
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

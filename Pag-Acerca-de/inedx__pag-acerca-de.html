@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de</title>
+    <link rel="icon" href="../Img/icono.jpg">
+    <link rel="stylesheet" href="style__pag-acerca-de.css">
+    <script src="script__pag-acerca-de.js"></script>
+</head>
+<body>
+    <!-- Menu en la barra superior (en modo de computadoras) o en toda la pantalla (en modo de telefono) -->
+    <header id="header" class="header__menu">
+        <div class="header__container-menu">
+            <!-- Contenedor de objetos para modo de telefono -->
+            <input type="checkbox" id="open-menu"><!-- Indicado de estado del menu y mantenerlo abierto o cerrado -->
+            <label for="open-menu" class="menu-open--nav" role="button">≡</label><!-- Activador o desactivador del checkbox -->
+            <nav class="nav-menu" id="nav-menu">
+                <div class="menu__container-logo2" id="menu__container-logo1">
+                    <a href="../index.php" onclick="CerrarInp()"><img class="menu__img-logo2" src="../Img/logo.jpg" type="jpg"></a><!-- Imagen de el Logo para modo de telefono-->
+                    <div class="logo2-text">
+                        <!-- Titulo y nombre o seccion de la pagina -->
+                        <label>Ceviche el Pirata</label><!-- Titulo del Menu -->
+                        <a href="#">_((ACERCA DE))_</a><!-- Nombre Pagina -->
+                    </div>
+                </div>
+                <hr>
+                <ul class="menu__nav-list">
+                    <!-- Menu de occiones -->
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="../Pag-Menu/index__pag-menu.html">Menu </a></li>
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="../Pag-Contacto/inedx__pag-contacto.html">Contacto </a></li>
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="../Pag-Reservaciones/inedx__pag-reservaciones.html">Reservaciones </a></li>
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="../Pag-Categoria/inedx__pag-categoria.html">Categoria </a></li>
+                    <li class="nav__li-item"><a onclick="CerrarInp()" href="inedx__pag-acerca-de.html">Acerca de</a></li>
+                    <!-- onclick="CerrarInp()": Sirve para cerrar el menu al hacer click en cada una de las occiones -->
+                </ul>
+            </nav>
+        </div>
+        <div class="header__container-logo1">
+            <!-- Contenedor de el logo -->
+            <a href="../index.php" onclick="CerrarInp()"><img class="img-logo1" src="../Img/logo_.png" type="png" alt="Logo de el Pirata" title="Logo de el Pirata"></a><!-- Imagen 2 para modo de computadora -->
+        </div>
+    </header>
+
+    <!-- Contenedor de los participantes -->
+    <main class="main__principal">
+        <div class="container-info">
+            <div class="info">
+                <!-- Participante -->
+                <div class="container-img">
+                    <!-- Contenedor de la imagen de leo -->
+                    <img id="Leo" src="../Img/img-leo.jpg" alt="Leonardo" oncontextmenu="CambioImgLeo()"><!-- Imagen Participante -->
+                </div>
+                <div class="container-role">
+                    <!-- Contenedor de informacion -->
+                    <label><b>Leonardo Alvares Verga</b></label><!-- Nombre -->
+                    <p>Role: <b>Chef</b></p><!-- Rol -->
+                    <!-- Descripcion -->
+                    <p><u>Este es uno de nuetros cocineros totalmente capacitados para brindales una muy buena atencion</u></p>
+                </div>
+            </div>
+            <div class="info">
+                <!-- Participante -->
+                <div class="container-img">
+                    <!-- Contenedor de la imagen de osvi -->
+                    <img id="Osvi" src="../Img/img-Osvi.jpg" alt="Osviel" oncontextmenu="CambioImgOsvi()"><!-- Imagen Participante -->
+                </div>
+                <div class="container-role">
+                    <!-- Contenedor de informacion -->
+                    <label><b>Osviel Antonio Garcia Salinas</b></label><!-- Nombre -->
+                    <p>Role: <b>Backend</b></p><!-- Rol -->
+                    <!-- Descripcion -->
+                    <p><u>Encargado de administra los archivos de la pagina y cordinar</u></p>
+                </div>
+            </div>
+            <div class="info">
+                <!-- Participante -->
+                <div class="container-img">
+                    <!-- Contenedor de la imagen de migue -->
+                    <img id="Migue" src="../Img/img-Migue.jpg" alt="Miguel" oncontextmenu="CambioImgMig()"><!-- Imagen Participante -->
+                </div>
+                <div class="container-role">
+                    <!-- Contenedor de informacion -->
+                    <label><b>Miguel Ángel Hernández Martínez</b></label><!-- Nombre -->
+                    <p>Role: <b>Frontend</b></p><!-- Rol -->
+                    <!-- Descripcion -->
+                    <p><u>Encargado en el desarrollo y diseño del sitio web</u></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de pagina -->
+    <footer class="footer-pie_de_pagina">
+        <div class="footer-pie1">
+            <!-- Contenedor de seccion 1 -->
+            <h6>Ceviche el Pirata</h6><!-- Nombre del local -->
+            <hr>
+            <div class="footer__container-img">
+                <img class="logo_footer" src="../Img/logo.jpg" alt="Logo de el local de ceviche"><!-- Logo -->
+                <!-- Palabras de marketing -->
+                <p>Plataforma de marketing, menus y distribucion de informacion sobre el local de "Ceviche el Pirata"</p>
+            </div>
+            <label>Redes Sociales:</label><!-- Sub titulo -->
+            <ul>
+                <!-- Redes sociales -->
+                <li><a href="https://www.instagram.com/mari.scoselpirata?igsh=MTRiYXl3eHUwxbA==" target="_blank">--Instagram--</a></li>
+                <li><a href="https://facebook.com/groups/672554158442758/" target="_blank">--Facebook--</a></li>
+                <li><a href="https://wa.me/+524451396753?text=Hola%20Leonardos,%20Me%20gustaria..." target="_blank">--WhatsApp--</a></li>
+                <li><a href="https://of.com/" target="_blank">--OnliFans--</a></li>
+            </ul>
+        </div>
+        <div class="footer-pie2">
+            <!-- Contenedor de seccion 2 -->
+            <label>Creditos:</label>
+            <ul>
+                <!-- Participantes -->
+                <li>Miguel A. Hernandez Mtz.</li><!-- Frontend -->
+                <li>Osviel A. Garcia S.</li><!-- Backend -->
+                <li>Leonardo Alvarez Vrg.</li><!-- Chef -->
+                <br>
+                <label>Maestro:</label>
+                <li>Juan Fer. Perez Esp.</li><!-- Profesor -->
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="../Img/icono.jpg">
+    <link rel="stylesheet" href="style__login.css">
+    <script src="script__login.js"></script>
+</head>
+<body>
+    <div class="container-login">
+        <form action="procesar_login.php" method="POST" onsubmit="return validarCheckbox();">
+            <h1>Login</h1>
+            <div class="input-box">
+                <label for="inp-usuario">Usuario</label>
+                <input type="text" name="usuario" id="inp-usuario" placeholder="Username" required>
+            </div>
+            <div class="input-box">
+                <label for="inp-password">Contraseña</label>
+                <input type="password" name="password" id="inp-password" placeholder="Password" required>
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox" name="checkbox" id="inp-checkbox" required>He leído los términos</label>
+                <a href="#" class="forgot">¿Olvidó la contraseña?</a>
+            </div>
+            <button type="submit" class="btn-login">Iniciar sesión</button>
+            <div class="register-link">
+                <p>¿No tienes una cuenta? <a href="errores.php">Regístrate</a></p>
+            </div>
+
+            <!-- Mensaje de error -->
+            <?php if (isset($_GET['error'])): ?>
+                <p class="error">
+                    <?php
+                    if ($_GET['error'] === 'contraseña_incorrecta') {
+                        echo "Contraseña incorrecta.";
+                    } elseif ($_GET['error'] === 'usuario_no_encontrado') {
+                        echo "Usuario no encontrado.";
+                    } elseif ($_GET['error'] === 'campos') {
+                        echo "Por favor, completa todos los campos.";
+                    } elseif ($_GET['error'] === 'servidor') {
+                        echo "Error del servidor. Intenta más tarde.";
+                    }
+                    ?>
+                </p>
+            <?php endif; ?>
+        </form>
+    </div>
+    <script>
+    function validarCheckbox() {
+        if (!document.getElementById('inp-checkbox').checked) {
+            alert('Debes aceptar los términos.');
+            return false;
+        }
+        return true;
+    }
+    </script>
+</body>
+</html>

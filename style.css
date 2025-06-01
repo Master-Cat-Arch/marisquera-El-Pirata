@@ -1,12 +1,14 @@
-:root{/* Variables globales */
+:root{
     --ColorFondoClaro: rgb(243, 243, 243);
-    --ColorFondoClaro2: rgb(224, 235, 219);
+    --ColorFondoClaro2: rgb(207, 226, 230);
     --ColorFondoClaro3: rgb(235, 199, 145);
+    --ColorFondoClaro4: rgb(168, 199, 224);
     --ColorFondoOscuro: rgb(221, 221, 221);
     --ColorFondoOscuro2: rgb(173, 173, 173);
     --ColorFondoOscuro3: rgb(199, 169, 125);
+    --ColorFondoOscuro4: rgb(43, 136, 173);
     --ColorLetra: aliceblue;
-    --ColorLetra2: rgb(233, 62, 19);
+    --ColorLetra2: rgb(21, 67, 218);
 }
 *{
     box-sizing: border-box;
@@ -71,7 +73,6 @@ body{
             overflow: auto;
             .menu__container-logo2{
                 display: none;
-                /*flex-direction: row;*/
                 flex-wrap: wrap;
                 position: relative;
                 justify-content: center;
@@ -80,7 +81,7 @@ body{
                 margin: 20px;
                 .menu__img-logo2{
                     max-width: 100%;
-                    height: 70px;
+                    height: 110px;/* Cambio de tamaño de 70 a 110 */
                     margin: 10px 15px;
                     border-radius: 10px;
                 }
@@ -123,7 +124,7 @@ body{
                     }    
                 }
 
-                #li-login{/* Nuevo estilo */
+                #li-login{
                     border: 0px solid black;
                     margin: 20px;
                     border-radius: 10px;
@@ -136,7 +137,7 @@ body{
                         .img-cuenta_login{
                             list-style: none;
                             .img-login{
-                                border: 1px solid rgb(247, 151, 151);
+                                border: 1px solid rgb(53, 143, 185);
                                 border-radius: 50%;
                                 width: 60px;
                             }
@@ -176,7 +177,7 @@ body{
                         border-radius: 8px;
                         transition: .4s;
                     }
-                }/* Si */
+                }
                 #li-login :hover{
                     border: transparent;
                     background: none;
@@ -202,6 +203,12 @@ body{
 }
 
 /*//////// Container Menu Header ////////*/
+.enlace-desactivado {
+    color: #aaa;
+    pointer-events: none;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
 @container Body (min-width: 700px){
     #header{
         flex-direction: row-reverse;
@@ -258,13 +265,13 @@ body{
                     #li-login{
                         padding: 0 0 22px;
                         margin: 0 20px 0 30px;
-                        .container-cuenta_login[open]{/* Nuevo estilo */
+                        .container-cuenta_login[open]{
                             background-color: var(--ColorFondoOscuro);
                             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.658);
                             position: absolute;
                             top: 140px;
                             right: 30px;
-                        }/* Si */
+                        }
                         a{
                             background-color: transparent;
                             color: transparent;
@@ -286,7 +293,7 @@ body{
             margin-left: 8vw;
             .img-logo1{
                 display: block;
-                height: 140px;
+                height: 120px;/* Cambio de tamaño de 140 a 120 */
             }
         }
     }
@@ -319,7 +326,7 @@ body{
             margin-top: 20px;
             div{margin-left: 30px;}
             .img-leo{
-                border: 1px solid rgb(247, 151, 151);
+                border: 1px solid rgb(151, 217, 247);
                 border-radius: 50%;
                 width: 45px;
             }
@@ -361,10 +368,9 @@ body{
 .container-inf-video{
     display: flex;
     z-index: 1;
-    /* border: 1px solid black; */
     .inf-video{
         width: 100%;
-        background-color: #ebb291;
+        background-color: var(--ColorFondoClaro4);
         padding: 20px;
         .video-leo{
             width: auto;
@@ -385,10 +391,9 @@ body{
         top: 600px;
         height: 70%;
         right: 10vw;
+        /* border: 1px solid black; */
         .inf-video{
             position: sticky;
-            /* right: 6vw;
-            top: -400px; */
             top: 250px;
             width: 400px;
             height: 600px;
@@ -493,7 +498,7 @@ body{
 
 /*//////// Pie de pagina ////////*/
 .footer-pie_de_pagina{
-    background-color: rgb(228, 110, 64);
+    background-color: var(--ColorFondoOscuro4);/* Cambio por una variable */
     color: var(--ColorLetra);
     display: flex;
     flex-wrap: wrap;

@@ -1,4 +1,9 @@
 <?php
+// Iniciar sesión para guardar datos del usuario si el login es exitoso
+session_start();
+$nombre_usuario = $_SESSION['usuario'] ?? '';
+
+// Mostrar errores para depuración
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -31,26 +36,19 @@ error_reporting(E_ALL);
                     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                         die("El correo electrónico no es válido.");
                     }
-                    // capturar Nombre de Usuario como foreing key de la tabla Usuarios.
-                    $Nombre_Usuario = $conexion->prepare("SELECT usuario FROM Usuarios WHERE id = ?");
-                    $Nombre_Usuario->bind_param("i", $_POST['id']);
-                    $Nombre_Usuario->execute();
-                    $resultado = $Nombre_Usuario->get_result();
-                    if ($resultado->num_rows > 0) {
-                        $usuario = $resultado->fetch_assoc();
-                        $nombre_usuario = $usuario['usuario'];
-                    } else {
-                        die("Usuario no encontrado.");
+                    // Obtener el nombre de usuario de la sesión
+                    $nombre_usuario = $_SESSION['usuario'] ?? '';
+                    if (empty($nombre_usuario)) {
+                        die("No has iniciado sesión.");
                     }
-                    $Nombre_Usuario->close();
-    /* Validar datos extra (opcional)
+    /* Validar datos extra (opcionales)
     if (empty($nombre) || empty($telefono1) || empty($fecha) || empty($detalles)) {
         die("Por favor, llena todos los campos.");
     }*/
 
         // Insertar datos en la base de datos
-        $stmt = $conexion->prepare("INSERT INTO Reservaciones (Nombre, Correo, Telefono1, Telefono2, Fecha, Detalles Usuario) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssss", $nombre, $email, $telefono1, $telefono2, $fecha, $detalles);
+        $stmt = $conexion->prepare("INSERT INTO Reservaciones (Nombre, Correo, Telefono1, Telefono2, Fecha, Detalles Usuario) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssss", $nombre, $email, $telefono1, $telefono2, $fecha, $detalles, $nombre_usuario);
 
         if ($stmt->execute()) {
             echo "Datos guardados correctamente.";

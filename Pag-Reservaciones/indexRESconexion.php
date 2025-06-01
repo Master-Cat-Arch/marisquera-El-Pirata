@@ -47,8 +47,8 @@ error_reporting(E_ALL);
     }*/
 
         // Insertar datos en la base de datos
-        $stmt = $conexion->prepare("INSERT INTO Reservaciones (Nombre, Correo, Telefono1, Telefono2, Fecha, Detalles Usuario) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssss", $nombre, $email, $telefono1, $telefono2, $fecha, $detalles, $nombre_usuario);
+        $stmt = $conexion->prepare("INSERT INTO Reservaciones (Nombre, Correo, Telefono1, Telefono2, Fecha, Detalles, Usuario) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssssss", $nombre, $email, $telefono1, $telefono2, $fecha, $detalles, $nombre_usuario);
 
         if ($stmt->execute()) {
             echo "Datos guardados correctamente.";
